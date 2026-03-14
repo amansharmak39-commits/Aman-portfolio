@@ -8,8 +8,8 @@ interface OverlayProps {
 
 export default function Overlay({ progress }: OverlayProps) {
   // Translate Y for parallax effects
-  const y1 = useTransform(progress, [0, 0.2], [0, -200]);
-  const opacity1 = useTransform(progress, [0, 0.1, 0.2], [1, 1, 0]);
+  //const y1 = useTransform(progress, [0, 0.2], [0, -200]);
+  //const opacity1 = useTransform(progress, [0, 0.1, 0.2], [1, 1, 0]);
 
   const y2 = useTransform(progress, [0.2, 0.4], [100, -100]);
   const opacity2 = useTransform(progress, [0.2, 0.3, 0.4], [0, 1, 0]);
@@ -60,14 +60,14 @@ export default function Overlay({ progress }: OverlayProps) {
                 key={skill}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ 
+                transition={{
                   delay: 1 + (i * 0.1),
                   type: "spring",
                   stiffness: 260,
                   damping: 26
                 }}
-                whileHover={{ 
-                  y: -12, 
+                whileHover={{
+                  y: -12,
                   backgroundColor: "rgba(255,255,255,0.15)",
                   borderColor: "rgba(255,255,255,0.3)",
                   boxShadow: "0 15px 30px rgba(0,0,0,0.3)"
@@ -75,10 +75,9 @@ export default function Overlay({ progress }: OverlayProps) {
                 className="group relative px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl cursor-default transition-colors duration-500"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className={`w-1.5 h-1.5 rounded-full ${
-                    skill === 'Figma' ? 'bg-[#F24E1E]' : 
+                  <div className={`w-1.5 h-1.5 rounded-full ${skill === 'Figma' ? 'bg-[#F24E1E]' :
                     skill === 'Photoshop' ? 'bg-[#31A8FF]' : 'bg-[#FF9A00]'
-                  } shadow-[0_0_10px_currentColor]`} />
+                    } shadow-[0_0_10px_currentColor]`} />
                   <span className="text-[11px] md:text-xs font-mono tracking-widest uppercase text-neutral-300 group-hover:text-white transition-colors">
                     {skill}
                   </span>
