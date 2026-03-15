@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Lenis handles kinetic scrolling */
+  }
+
+  body {
+    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    cursor: none;
+    background-color: #121212;
+    color: white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
