@@ -14,13 +14,6 @@ const projects = [
     image: "/projects/zenith.jpg",
   },
   {
-    title: "GTM Buddy",
-    description: "Revenue intelligence dashboard for data-driven sales analytics.",
-    year: "2023",
-    brand: "#8b5cf6",
-    image: "/projects/gtm.jpg",
-  },
-  {
     title: "Surmaya",
     description: "Immersive mobile UI design for a music streaming app.",
     year: "2023",
@@ -157,10 +150,15 @@ export default function Projects() {
   return (
     <section className="relative w-full bg-[#121212] py-24 overflow-hidden border-t border-white/5">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ type: "spring", damping: 30, stiffness: 200 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ 
+          type: "spring", 
+          damping: 30, 
+          stiffness: 200,
+          duration: 0.8
+        }}
         className="px-6 lg:px-24 mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white leading-tight">
@@ -193,7 +191,18 @@ export default function Projects() {
       </div>
 
       {/* Manual Navigation Arrows */}
-      <div className="flex justify-center items-center gap-6 mt-16 px-6 lg:px-24">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ 
+          type: "spring", 
+          damping: 25, 
+          stiffness: 200,
+          delay: 0.2
+        }}
+        className="flex justify-center items-center gap-6 mt-16 px-6 lg:px-24"
+      >
         <motion.button
           whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.1)" }}
           whileTap={{ scale: 0.9 }}
@@ -222,7 +231,7 @@ export default function Projects() {
         >
           <ChevronRight className="w-6 h-6 transition-transform group-hover:translate-x-0.5" />
         </motion.button>
-      </div>
+      </motion.div>
 
       {/* Cinematic Side Gradients */}
       <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-[#121212] via-[#121212]/50 to-transparent z-10 pointer-events-none" />

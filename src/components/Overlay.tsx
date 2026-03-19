@@ -24,9 +24,14 @@ export default function Overlay({ progress }: OverlayProps) {
             opacity: opacity1,
             y: y1
           }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+          initial={{ opacity: 0, scale: 0.98, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ 
+            duration: 1.5, 
+            ease: [0.16, 1, 0.3, 1], 
+            delay: 0.2,
+            scale: { type: "spring", stiffness: 100, damping: 20 }
+          }}
           className="relative mt-28 flex flex-col items-center text-center max-w-4xl"
         >
           <motion.div

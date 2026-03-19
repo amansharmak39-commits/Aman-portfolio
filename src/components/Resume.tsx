@@ -8,8 +8,8 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3
+      staggerChildren: 0.15,
+      delayChildren: 0.2
     }
   }
 };
@@ -22,11 +22,14 @@ const SPRING_CONFIG: Transition = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: SPRING_CONFIG
+    transition: {
+      ...SPRING_CONFIG,
+      duration: 0.8
+    }
   }
 };
 
