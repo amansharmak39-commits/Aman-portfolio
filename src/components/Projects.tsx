@@ -161,16 +161,16 @@ export default function Projects() {
         }}
         className="px-6 lg:px-24 mb-16"
       >
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white leading-tight">
+        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-white leading-tight">
           My Creative <span className="text-white/20 italic font-medium">Design</span>
         </h2>
       </motion.div>
 
-      <div className="relative w-full overflow-hidden flex group/track py-12">
+      <div className="relative w-full max-md:overflow-visible overflow-hidden block md:flex group/track py-12">
         <motion.div
           ref={trackRef}
           style={{ x: xPercentage }}
-          className="flex whitespace-nowrap gap-12 selection:bg-transparent"
+          className="grid grid-cols-1 sm:grid-cols-2 md:flex md:whitespace-nowrap gap-8 md:gap-12 justify-items-center selection:bg-transparent max-md:!transform-none"
         >
           {allProjects.map((project, idx) => (
             <div
@@ -201,7 +201,7 @@ export default function Projects() {
           stiffness: 200,
           delay: 0.2
         }}
-        className="flex justify-center items-center gap-6 mt-16 px-6 lg:px-24"
+        className="hidden md:flex justify-center items-center gap-6 mt-16 px-6 lg:px-24"
       >
         <motion.button
           whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.1)" }}

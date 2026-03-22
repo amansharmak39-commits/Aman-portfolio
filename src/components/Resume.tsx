@@ -35,7 +35,7 @@ const itemVariants: Variants = {
 
 export default function Resume() {
   return (
-    <section className="w-full bg-[#121212] py-32 px-6 lg:px-24 border-t border-white/5">
+    <section className="w-full bg-[#121212] py-16 md:py-32 px-6 lg:px-24 border-t border-white/5 overflow-hidden">
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -45,25 +45,25 @@ export default function Resume() {
       >
         {/* Header Section */}
         <motion.div variants={itemVariants} className="mb-24">
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-8">
+          <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-white mb-6 md:mb-8">
             About <span className="text-white/20 italic font-medium">Me</span>
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
             <div className="lg:col-span-8">
-              <p className="text-xl md:text-2xl text-white/80 leading-relaxed font-light">
+              <p className="text-lg md:text-2xl text-white/80 leading-relaxed font-light mt-4 md:mt-0">
                 Hello! I&apos;m <span className="text-white font-semibold">Aman Sharma</span>, a passionate Graphic Designer and UI/UX Designer based in Uttar Pradesh, India.
               </p>
-              <p className="text-lg text-white/40 mt-6 leading-relaxed max-w-4xl">
+              <p className="text-base md:text-lg text-white/40 mt-4 md:mt-6 leading-relaxed max-w-4xl">
                 I specialize in creating user-centered digital experiences that are both visually appealing and easy to use. My focus is on transforming complex ideas into clean, intuitive, and engaging designs for web and mobile platforms.
               </p>
-              <p className="text-lg text-white/40 mt-4 leading-relaxed max-w-4xl">
+              <p className="text-base md:text-lg text-white/40 mt-4 leading-relaxed max-w-4xl">
                 I have strong expertise in UI/UX design, illustration, and visual storytelling, and I enjoy exploring modern design trends to craft innovative digital products.
               </p>
-              <p className="text-lg text-white/40 mt-4 leading-relaxed max-w-4xl">
+              <p className="text-base md:text-lg text-white/40 mt-4 leading-relaxed max-w-4xl">
                 With hands-on experience in tools like <span className="text-white/60">Figma, Adobe Illustrator, and Photoshop</span>, I create designs that balance creativity, usability, and functionality. My goal is to design experiences that not only look great but also solve real user problems.
               </p>
             </div>
-            <div className="lg:col-span-4 flex flex-col gap-4">
+            <div className="lg:col-span-4 flex flex-col gap-4 mt-6 lg:mt-0">
               <motion.a 
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -71,7 +71,7 @@ export default function Resume() {
                 href="https://www.behance.net/amansharma09" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-8 py-4 bg-white/5 text-white hover:bg-white/10 border border-white/10 rounded-2xl font-medium transition-all backdrop-blur-md"
+                className="flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-white/5 text-white hover:bg-white/10 border border-white/10 rounded-2xl font-medium transition-all backdrop-blur-md"
               >
                 <LinkIcon className="w-5 h-5" />
                 Behance Portfolio
@@ -83,7 +83,7 @@ export default function Resume() {
                 href="https://www.linkedin.com/in/aman-sharma-b464a4375/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-8 py-4 bg-[#0a66c2]/10 text-[#0a66c2] hover:bg-[#0a66c2]/20 border border-[#0a66c2]/30 rounded-2xl font-medium transition-all backdrop-blur-md"
+                className="flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#0a66c2]/10 text-[#0a66c2] hover:bg-[#0a66c2]/20 border border-[#0a66c2]/30 rounded-2xl font-medium transition-all backdrop-blur-md"
               >
                 <Linkedin className="w-5 h-5" />
                 LinkedIn Profile
@@ -92,23 +92,23 @@ export default function Resume() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           
           {/* Left Column: Experience & Education */}
-          <div className="lg:col-span-8 space-y-24">
+          <div className="lg:col-span-8 space-y-16 md:space-y-24">
             
             {/* Experience */}
             <motion.div variants={itemVariants}>
-              <div className="flex items-center gap-4 mb-10">
-                <div className="p-3 bg-white/5 rounded-2xl border border-white/10">
-                  <Briefcase className="w-6 h-6 text-white/60" />
+              <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-10">
+                <div className="p-2 md:p-3 bg-white/5 rounded-2xl border border-white/10">
+                  <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-white/60" />
                 </div>
-                <h3 className="text-3xl font-bold text-white tracking-tight">Work Experience</h3>
+                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Work Experience</h3>
               </div>
               
-              <div className="relative border-l border-white/10 pl-10 ml-6 space-y-12">
+              <div className="relative border-l border-white/10 pl-6 md:pl-10 ml-3 md:ml-6 space-y-12">
                 <div className="relative">
-                  <div className="absolute w-4 h-4 bg-white rounded-full -left-[48px] top-2 border-4 border-[#121212] shadow-[0_0_20px_rgba(255,255,255,0.3)]" />
+                  <div className="absolute w-4 h-4 bg-white rounded-full -left-[32px] md:-left-[48px] top-2 border-4 border-[#121212] shadow-[0_0_20px_rgba(255,255,255,0.3)]" />
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
                     <div>
                       <h4 className="text-2xl font-bold text-white">Graphic Designer (Remote)</h4>

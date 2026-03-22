@@ -42,7 +42,7 @@ export default function Overlay({ progress }: OverlayProps) {
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent"
+            className="text-base md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900"
           >
             Aman Sharma
           </motion.h1>

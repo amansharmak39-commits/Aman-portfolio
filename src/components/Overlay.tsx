@@ -26,9 +26,9 @@ export default function Overlay({ progress }: OverlayProps) {
           }}
           initial={{ opacity: 0, scale: 0.98, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ 
-            duration: 1.5, 
-            ease: [0.16, 1, 0.3, 1], 
+          transition={{
+            duration: 1.5,
+            ease: [0.16, 1, 0.3, 1],
             delay: 0.2,
             scale: { type: "spring", stiffness: 100, damping: 20 }
           }}
@@ -38,21 +38,21 @@ export default function Overlay({ progress }: OverlayProps) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="mb-6 px-8 py-2 rounded-full bg-white/8 backdrop-blur-1xl border border-white/20 text-white text-xs md:text-sm font-mono tracking-[0.3em] uppercase shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+            className="mb-8 px-4 py-2 sm:px-4 sm:py-3 md:px-8 md:py-4 rounded-full bg-white/8 backdrop-blur- border border-white/20 text-white text-[10px] sm:text-xs md:text-sm lg:text-base font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase shadow-[0_0_20px_rgba(255,255,255,0.05)]"
           >
             Graphic Designer & UI/UX Designer
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent"
-          >
+            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+
             Aman Sharma
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-2xl text-neutral-200 max-w-2xl leading-relaxed font-light shadow-sm mb-12"
+            className="text-base md:text-2xl text-neutral-200 max-w-2xl leading-relaxed font-light shadow-sm mb-12"
           >
-            Designing <span className="text-white font-medium">clean, modern, and user-focused</span> digital experiences for web and mobile.
+            Designing <span className="style={{ fontSize: '4px !important', color: 'white'}} ">clean, modern, and user-focused</span> digital experiences for web and mobile.
           </motion.p>
 
           {/* Interactive Skill Balls */}
@@ -100,7 +100,7 @@ export default function Overlay({ progress }: OverlayProps) {
           <motion.h2 className="text-3xl md:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
             Transforming <span className="text-white/50 italic font-medium">complex ideas</span> into stunning digital reality.
           </motion.h2>
-          <p className="text-lg md:text-xl text-neutral-200 font-light leading-relaxed">
+          <p className="text-base md:text-xl text-neutral-200 font-light leading-relaxed">
             I specialize in crafting <span className="text-white font-medium">functional and visually compelling</span> interfaces for mobile and web platforms.
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export default function Overlay({ progress }: OverlayProps) {
           <motion.h2 className="text-3xl md:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
             User-Centered <span className="text-white/50 italic font-medium">Product Design</span> & Creative Mastery.
           </motion.h2>
-          <p className="text-lg md:text-xl text-neutral-200 font-light leading-relaxed ml-auto max-w-lg">
+          <p className="text-base md:text-xl text-neutral-200 font-light leading-relaxed ml-auto max-w-lg">
             Expertly utilizing <span className="text-white font-medium">Figma, Adobe Illustrator & Photoshop</span> to build research-driven design solutions.
           </p>
         </motion.div>
