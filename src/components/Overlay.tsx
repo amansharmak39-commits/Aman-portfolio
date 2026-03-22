@@ -44,19 +44,19 @@ export default function Overlay({ progress }: OverlayProps) {
           </motion.div>
 
           <motion.h1
-            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+            className="text-5xl md:text-7xl lg:text-7xl font-bold leading-tight">
 
             Aman Sharma
           </motion.h1>
 
           <motion.p
-            className="text-base md:text-2xl text-neutral-200 max-w-2xl leading-relaxed font-light shadow-sm mb-12"
+            className="text-base md:text-lg px-4 md:px-0 text-neutral-200 max-w-2xl leading-relaxed font-light shadow-sm mb-12"
           >
             Designing <span className="style={{ fontSize: '4px !important', color: 'white'}} ">clean, modern, and user-focused</span> digital experiences for web and mobile.
           </motion.p>
 
           {/* Interactive Skill Balls */}
-          <div className="flex gap-4 md:gap-6 justify-center">
+          <div className="flex flex-wrap gap-2 md:gap-6 justify-center">
             {['Figma', 'Photoshop', 'Illustrator'].map((skill, i) => (
               <motion.div
                 key={skill}
@@ -95,12 +95,12 @@ export default function Overlay({ progress }: OverlayProps) {
             opacity: opacity2,
             y: y2
           }}
-          className="absolute left-8 lg:left-24 max-w-xl text-left"
+          className="absolute left-0 text-left pl-6 lg:pl-20 w-full md:w-3/4 lg:w-2/3"
         >
-          <motion.h2 className="text-3xl md:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
+          <motion.h2 className="text-4xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white break-words">
             Transforming <span className="text-white/50 italic font-medium">complex ideas</span> into stunning digital reality.
           </motion.h2>
-          <p className="text-base md:text-xl text-neutral-200 font-light leading-relaxed">
+          <p className="text-sm md:text-lg lg:text-xl px-6 md:px-0 text-neutral-200 font-light leading-relaxed">
             I specialize in crafting <span className="text-white font-medium">functional and visually compelling</span> interfaces for mobile and web platforms.
           </p>
         </motion.div>
@@ -111,12 +111,12 @@ export default function Overlay({ progress }: OverlayProps) {
             opacity: opacity3,
             y: y3
           }}
-          className="absolute right-8 lg:right-24 max-w-xl text-right"
+          className="absolute left-0 text-left pl-6 lg:pl-20 w-full md:w-3/4 lg:w-2/3"
         >
-          <motion.h2 className="text-3xl md:text-6xl font-bold tracking-tight leading-tight mb-6 text-white">
+          <motion.h2 className="text-4xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white break-words">
             User-Centered <span className="text-white/50 italic font-medium">Product Design</span> & Creative Mastery.
           </motion.h2>
-          <p className="text-base md:text-xl text-neutral-200 font-light leading-relaxed ml-auto max-w-lg">
+          <p className="text-sm md:text-lg px-6 md:px-0 text-neutral-200 font-light leading-relaxed max-w-lg">
             Expertly utilizing <span className="text-white font-medium">Figma, Adobe Illustrator & Photoshop</span> to build research-driven design solutions.
           </p>
         </motion.div>
