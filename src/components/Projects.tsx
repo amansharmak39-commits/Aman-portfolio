@@ -98,6 +98,7 @@ const allProjects = [...projects, ...projects];
 export default function Projects() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
 
   // Use MotionValues for high-performance slider sync
@@ -168,27 +169,48 @@ export default function Projects() {
 
       <div className="relative w-full max-md:overflow-visible overflow-hidden block md:flex group/track py-12">
         <motion.div
+          layout
           ref={trackRef}
           style={{ x: xPercentage }}
           className="grid grid-cols-1 sm:grid-cols-2 md:flex md:whitespace-nowrap gap-8 md:gap-12 justify-items-center selection:bg-transparent max-md:!transform-none"
         >
-          {allProjects.map((project, idx) => (
-            <div
-              key={idx}
-              className="shrink-0"
-              onMouseEnter={() => setHoveredIdx(idx)}
-              onMouseLeave={() => setHoveredIdx(null)}
-            >
+          {allProjects.map((project, idx) => {
+            const isMobileHidden = idx >= (showAll ? projects.length : 4);
+
+            return (
+              <motion.div
+                layout
+                key={idx}
+                className={`shrink-0 ${isMobileHidden ? 'max-md:hidden' : ''}`}
+                onMouseEnter={() => setHoveredIdx(idx)}
+                onMouseLeave={() => setHoveredIdx(null)}
+              >
               <RefinedSmallCard
                 project={project}
                 isFocused={hoveredIdx === idx}
                 isAnyHovered={hoveredIdx !== null}
                 onClick={() => project.image && setSelectedImage(project.image)}
               />
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
+
+      {/* View All Button for Mobile */}
+      <motion.div 
+        layout
+        className="flex justify-center md:hidden mt-2 mb-16"
+      >
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => setShowAll(!showAll)}
+          className="px-8 py-3 rounded-full bg-white/5 backdrop-blur-xl border border-white/20 font-medium text-white shadow-xl hover:bg-white/10 transition-all cursor-pointer z-50 relative"
+        >
+          {showAll ? "View Less" : "View All Projects"}
+        </motion.button>
+      </motion.div>
 
       {/* Manual Navigation Arrows */}
       <motion.div 
