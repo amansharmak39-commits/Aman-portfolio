@@ -167,41 +167,72 @@ export default function Projects() {
         </h2>
       </motion.div>
 
-      <div className="relative w-full max-md:overflow-visible overflow-hidden block md:flex group/track py-12">
+      {/* Desktop Infinite Slider */}
+      <div className="relative w-full overflow-hidden hidden md:flex group/track py-12">
         <motion.div
-          layout
           ref={trackRef}
           style={{ x: xPercentage }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:flex md:whitespace-nowrap gap-8 md:gap-12 justify-items-center selection:bg-transparent max-md:!transform-none"
+          className="flex whitespace-nowrap gap-12 selection:bg-transparent"
         >
-          {allProjects.map((project, idx) => {
-            const isMobileHidden = idx >= (showAll ? projects.length : 4);
-
-            return (
-              <motion.div
-                layout
-                key={idx}
-                className={`shrink-0 ${isMobileHidden ? 'max-md:hidden' : ''}`}
-                onMouseEnter={() => setHoveredIdx(idx)}
-                onMouseLeave={() => setHoveredIdx(null)}
-              >
+          {allProjects.map((project, idx) => (
+            <div
+              key={idx}
+              className="shrink-0"
+              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseLeave={() => setHoveredIdx(null)}
+            >
               <RefinedSmallCard
                 project={project}
                 isFocused={hoveredIdx === idx}
                 isAnyHovered={hoveredIdx !== null}
                 onClick={() => project.image && setSelectedImage(project.image)}
               />
-              </motion.div>
-            );
-          })}
+            </div>
+          ))}
         </motion.div>
       </div>
 
+      {/* Mobile Progressive Grid */}
+      <div className="relative w-full overflow-visible block md:hidden py-12 px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center w-full">
+          {projects.slice(0, 4).map((project, idx) => (
+            <div key={idx} className="shrink-0 w-full flex justify-center">
+              <RefinedSmallCard
+                project={project}
+                isFocused={false}
+                isAnyHovered={false}
+                onClick={() => project.image && setSelectedImage(project.image)}
+              />
+            </div>
+          ))}
+          
+          <AnimatePresence>
+            {showAll && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8 justify-items-center w-full"
+              >
+                {projects.slice(4).map((project, idx) => (
+                  <div key={idx + 4} className="shrink-0 w-full flex justify-center">
+                    <RefinedSmallCard
+                      project={project}
+                      isFocused={false}
+                      isAnyHovered={false}
+                      onClick={() => project.image && setSelectedImage(project.image)}
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
       {/* View All Button for Mobile */}
-      <motion.div 
-        layout
-        className="flex justify-center md:hidden mt-2 mb-16"
-      >
+      <div className="flex justify-center md:hidden mt-2 mb-16 px-6">
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -210,7 +241,7 @@ export default function Projects() {
         >
           {showAll ? "View Less" : "View All Projects"}
         </motion.button>
-      </motion.div>
+      </div>
 
       {/* Manual Navigation Arrows */}
       <motion.div 
@@ -317,23 +348,20 @@ function RefinedSmallCard({ project, onClick, isFocused, isAnyHovered }: Project
     <motion.div
       onClick={onClick}
       animate={{
-        // Focused card grows aggressively, others shrink for depth
-        scale: isFocused ? 1.15 : isAnyHovered ? 0.85 : 1,
-        opacity: isFocused ? 1 : isAnyHovered ? 0.4 : 1,
-        filter: isFocused ? "brightness(1.1) saturate(1.1)" : isAnyHovered ? "brightness(0.5) blur(2px)" : "brightness(1) blur(0px)",
+        scale: isFocused ? 1.1 : isAnyHovered ? 0.9 : 1,
+        opacity: isFocused ? 1 : isAnyHovered ? 0.5 : 1,
         zIndex: isFocused ? 20 : 10,
       }}
       transition={{
         type: "spring",
-        stiffness: 260,
-        damping: 26,
+        stiffness: 300,
+        damping: 30,
         mass: 1
       }}
       whileHover={{
         borderColor: "rgba(255,255,255,0.2)",
-        boxShadow: "0 20px 40px rgba(0,0,0,0.4)"
       }}
-      className={`group relative w-[280px] md:w-[320px] aspect-[3/4.2] rounded-[38px] overflow-hidden bg-[#161616] cursor-pointer border border-white/[0.04] shadow-xl`}
+      className={`group relative w-[280px] md:w-[320px] aspect-[3/4.2] rounded-[38px] overflow-hidden bg-[#161616] cursor-pointer border border-white/[0.04] shadow-lg will-change-transform translate-z-0`}
     >
       <div className="absolute inset-0 z-0">
         {project.image && (
@@ -341,7 +369,8 @@ function RefinedSmallCard({ project, onClick, isFocused, isAnyHovered }: Project
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition-all duration-1000 blur-[2px] group-hover:blur-0 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105 block opacity-100 will-change-transform translate-z-0"
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/95 via-[#000000]/20 to-transparent" />

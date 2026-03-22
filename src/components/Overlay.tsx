@@ -38,19 +38,19 @@ export default function Overlay({ progress }: OverlayProps) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="mb-8 px-4 py-2 sm:px-4 sm:py-3 md:px-8 md:py-4 rounded-full bg-white/8 backdrop-blur- border border-white/20 text-white text-[10px] sm:text-xs md:text-sm lg:text-base font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase shadow-[0_0_20px_rgba(255,255,255,0.05)]"
+            className="mb-3 px-4 py-2 sm:px-4 sm:py-3 md:px-8 md:py-4 rounded-full bg-white/8 backdrop-blur- border border-white/20 text-white text-[10px] sm:text-xs md:text-sm lg:text-base font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase shadow-[0_0_20px_rgba(255,255,255,0.05)]"
           >
             Graphic Designer & UI/UX Designer
           </motion.div>
 
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-7xl font-bold leading-tight">
+            className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-center">
 
             Aman Sharma
           </motion.h1>
 
           <motion.p
-            className="text-base md:text-lg px-4 md:px-0 text-neutral-200 max-w-2xl leading-relaxed font-light shadow-sm mb-12"
+            className="text-sm md:text-xl px-4 md:px-0 text-neutral-200 max-w-2xl leading-relaxed font-light shadow-sm mb-12"
           >
             Designing <span className="style={{ fontSize: '4px !important', color: 'white'}} ">clean, modern, and user-focused</span> digital experiences for web and mobile.
           </motion.p>
@@ -95,12 +95,12 @@ export default function Overlay({ progress }: OverlayProps) {
             opacity: opacity2,
             y: y2
           }}
-          className="absolute left-0 text-left pl-6 lg:pl-20 w-full md:w-3/4 lg:w-2/3"
+          className="absolute inset-x-0 md:inset-x-auto md:left-0 mx-auto md:mx-0 w-full max-w-[90vw] md:max-w-none px-4 md:px-0 md:pl-10 lg:pl-20 md:w-3/4 lg:w-2/3 text-left"
         >
-          <motion.h2 className="text-4xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white break-words">
+          <motion.h2 className="text-2xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight mb-6 text-white break-words text-left">
             Transforming <span className="text-white/50 italic font-medium">complex ideas</span> into stunning digital reality.
           </motion.h2>
-          <p className="text-sm md:text-lg lg:text-xl px-6 md:px-0 text-neutral-200 font-light leading-relaxed">
+          <p className="text-sm md:text-lg text-neutral-200 font-light leading-relaxed text-left">
             I specialize in crafting <span className="text-white font-medium">functional and visually compelling</span> interfaces for mobile and web platforms.
           </p>
         </motion.div>
@@ -111,12 +111,12 @@ export default function Overlay({ progress }: OverlayProps) {
             opacity: opacity3,
             y: y3
           }}
-          className="absolute left-0 text-left pl-6 lg:pl-20 w-full md:w-3/4 lg:w-2/3"
+          className="absolute inset-x-0 md:inset-x-auto md:right-0 mx-auto md:mx-0 flex flex-col items-end w-full max-w-[90vw] md:max-w-none px-4 md:px-0 md:pr-16 lg:pr-24 lg:w-2/3 md:ml-auto"
         >
-          <motion.h2 className="text-4xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-tight mb-6 text-white break-words">
+          <motion.h2 className="text-2xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight mb-6 text-white break-words text-right">
             User-Centered <span className="text-white/50 italic font-medium">Product Design</span> & Creative Mastery.
           </motion.h2>
-          <p className="text-sm md:text-lg px-6 md:px-0 text-neutral-200 font-light leading-relaxed max-w-lg">
+          <p className="text-sm md:text-lg text-neutral-200 font-light leading-relaxed max-w-lg text-right">
             Expertly utilizing <span className="text-white font-medium">Figma, Adobe Illustrator & Photoshop</span> to build research-driven design solutions.
           </p>
         </motion.div>
