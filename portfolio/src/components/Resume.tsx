@@ -151,15 +151,12 @@ export default function Resume() {
                 >
                   <div className="flex justify-between items-start mb-4">
                     <h4 className="text-2xl font-bold text-white">BA in Arts</h4>
-                    <span className="text-white/20 font-mono text-sm font-medium">2023 — Present</span>
+                    <span className="text-white/20 font-mono text-sm font-medium">2023 — 2026</span>
                   </div>
                   <p className="text-white/60 text-lg">SW. Narendra Singh Mahavidyalaya • Kanpur, India</p>
                   <div className="mt-6 flex items-center gap-4">
                     <div className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/40 text-sm font-mono">
                       GPA: 7.8
-                    </div>
-                    <div className="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
-                      Currently Pursuing
                     </div>
                   </div>
                 </motion.div>
