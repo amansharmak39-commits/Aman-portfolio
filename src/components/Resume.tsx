@@ -23,8 +23,8 @@ const SPRING_CONFIG: Transition = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       ...SPRING_CONFIG,
@@ -36,7 +36,7 @@ const itemVariants: Variants = {
 export default function Resume() {
   return (
     <section className="w-full bg-[#121212] py-16 md:py-32 px-6 lg:px-24 border-t border-white/5 overflow-hidden">
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -64,24 +64,24 @@ export default function Resume() {
               </p>
             </div>
             <div className="lg:col-span-4 flex flex-col gap-4 mt-6 lg:mt-0">
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 500, damping: 25 }}
-                href="https://www.behance.net/amansharma09" 
-                target="_blank" 
+                href="https://www.behance.net/amansharma09"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-white/5 text-white hover:bg-white/10 border border-white/10 rounded-2xl font-medium transition-all backdrop-blur-md"
               >
                 <LinkIcon className="w-5 h-5" />
                 Behance Portfolio
               </motion.a>
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 500, damping: 25 }}
-                href="https://www.linkedin.com/in/aman-sharma-b464a4375/" 
-                target="_blank" 
+                href="https://www.linkedin.com/in/aman-sharma-b464a4375/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-6 md:px-8 py-3 md:py-4 bg-[#0a66c2]/10 text-[#0a66c2] hover:bg-[#0a66c2]/20 border border-[#0a66c2]/30 rounded-2xl font-medium transition-all backdrop-blur-md"
               >
@@ -93,10 +93,10 @@ export default function Resume() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-          
+
           {/* Left Column: Experience & Education */}
           <div className="lg:col-span-8 space-y-16 md:space-y-24">
-            
+
             {/* Experience */}
             <motion.div variants={itemVariants}>
               <div className="flex items-center gap-3 md:gap-4 mb-8 md:mb-10">
@@ -105,7 +105,7 @@ export default function Resume() {
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">Work Experience</h3>
               </div>
-              
+
               <div className="relative border-l border-white/10 pl-6 md:pl-10 ml-3 md:ml-6 space-y-12">
                 <div className="relative">
                   <div className="absolute w-4 h-4 bg-white rounded-full -left-[32px] md:-left-[48px] top-2 border-4 border-[#121212] shadow-[0_0_20px_rgba(255,255,255,0.3)]" />
@@ -144,9 +144,9 @@ export default function Resume() {
                 </div>
                 <h3 className="text-3xl font-bold text-white tracking-tight">Education</h3>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.02, y: -5, backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.15)" }}
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   className="bg-white/[0.02] border border-white/5 rounded-[32px] p-10 transition-colors duration-500"
@@ -169,16 +169,16 @@ export default function Resume() {
 
           {/* Right Column: Skills, Certs & Languages */}
           <div className="lg:col-span-4 space-y-20">
-            
+
             {/* Skills */}
             <motion.div variants={itemVariants}>
               <h3 className="text-xl font-bold text-white mb-8 uppercase tracking-widest text-white/30">Expertise</h3>
               <div className="flex flex-wrap gap-3">
                 {["Graphic Design", "UI/UX", "Illustration", "Visual Storytelling", "Wireframing", "Prototyping", "Icon Design"].map((skill) => (
-                  <motion.span 
-                    key={skill} 
-                    whileHover={{ 
-                      scale: 1.1, 
+                  <motion.span
+                    key={skill}
+                    whileHover={{
+                      scale: 1.1,
                       backgroundColor: "rgba(255,255,255,0.15)",
                       borderColor: "rgba(255,255,255,0.2)"
                     }}
@@ -214,7 +214,7 @@ export default function Resume() {
                   <div key={lang} className="flex-1 p-6 rounded-2xl border border-white/5 bg-white/[0.02] text-center">
                     <span className="text-white font-bold">{lang}</span>
                     <div className="w-full h-1 bg-white/5 rounded-full mt-3 overflow-hidden">
-                      <motion.div 
+                      <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: lang === "Hindi" ? "100%" : "85%" }}
                         className="h-full bg-white/20"
